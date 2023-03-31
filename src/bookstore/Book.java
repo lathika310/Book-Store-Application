@@ -12,7 +12,7 @@ public class Book {
 
     public Book(String name, double price) {
         nameProperty().set(name);
-        price = ((int)(price*100))/100.0;
+        price = ((int) (price * 100)) / 100.0;
         priceProperty().set(price);
     }
 
@@ -39,6 +39,6 @@ public class Book {
             return false;
         }
         Book b = (Book) o;
-        return nameProperty().get().equals(b.nameProperty().get());
+        return nameProperty().get().equals(b.nameProperty().get()) && priceProperty().get() == b.priceProperty().get();
     }
 }
