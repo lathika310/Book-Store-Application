@@ -2,6 +2,8 @@ package bookstore;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import javafx.application.Application;
@@ -46,6 +48,12 @@ public class Main extends Application {
         bookTable = new TableView<>(books);
 
         launch(args);
+
+        try {
+            saveCustomers();
+        } catch (IOException e) {
+            System.out.println("customer.txt saving error");
+        }
     }
 
     public static ObservableList<Customer> fetchCustomers() throws FileNotFoundException {
@@ -61,6 +69,14 @@ public class Main extends Application {
             }
         }
         return customerList;
+    }
+
+    public static void saveCustomers() throws IOException {
+        FileWriter fw = new FileWriter("customers.txt");
+        for (Customer c : customers) {
+            fw.write(c.usernameProperty().get() + '\n' + c.passwordProperty().get() + '\n' + c.pointsProperty().get() + '\n');
+        }
+        fw.close();
     }
 
     public static ObservableList<Book> fetchBooks() throws FileNotFoundException {

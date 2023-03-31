@@ -36,6 +36,13 @@ public class OwnerCustomersScreenController implements Initializable {
 
     @FXML
     private void enterButton(ActionEvent event) throws IOException {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+        Customer c = new Customer(username, password);
+        if (!Main.getCustomers().contains(c)) {
+            Main.getCustomers().add(c);
+        }
+        customerTable.getItems().setAll(Main.getCustomers());
     }
 
     @FXML

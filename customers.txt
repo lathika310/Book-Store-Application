@@ -1,9 +1,9 @@
-username
-password
-1000
 some
 person
-99
+0
+random
+human
+0
 lorem
 ipsum
-999
+0
