@@ -40,14 +40,12 @@ public class OwnerBooksScreenController implements Initializable {
         if (!Main.getBookList().contains(b)) {
             Main.getBookList().add(b);
         }
-        bookTable.getItems().setAll(Main.getBookList());
     }
 
     @FXML
     private void deleteButton(ActionEvent event) {
         Book selectedBook = bookTable.getSelectionModel().getSelectedItem();
         Main.getBookList().remove(selectedBook);
-        bookTable.getItems().setAll(Main.getBookList());
     }
 
     @FXML
@@ -63,6 +61,6 @@ public class OwnerBooksScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        bookTable.getItems().setAll(Main.getBookList());
+        bookTable.setItems(Main.getBookList());
     }
 }

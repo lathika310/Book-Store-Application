@@ -42,14 +42,12 @@ public class OwnerCustomersScreenController implements Initializable {
         if (!Main.getCustomerList().contains(c)) {
             Main.getCustomerList().add(c);
         }
-        customerTable.getItems().setAll(Main.getCustomerList());
     }
 
     @FXML
     private void deleteButton(ActionEvent event) throws IOException {
         Customer selectedCustomer = customerTable.getSelectionModel().getSelectedItem();
         Main.getCustomerList().remove(selectedCustomer);
-        customerTable.getItems().setAll(Main.getCustomerList());
     }
 
     @FXML
@@ -66,6 +64,6 @@ public class OwnerCustomersScreenController implements Initializable {
         usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
         passwordColumn.setCellValueFactory(new PropertyValueFactory<>("password"));
         pointsColumn.setCellValueFactory(new PropertyValueFactory<>("points"));
-        customerTable.getItems().setAll(Main.getCustomerList());
+        customerTable.setItems(Main.getCustomerList());
     }
 }
