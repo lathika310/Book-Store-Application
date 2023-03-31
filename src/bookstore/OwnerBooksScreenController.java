@@ -10,22 +10,44 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class OwnerBooksScreenController implements Initializable {
 
+    @FXML
+    private TextField nameField;
+    @FXML
+    private TextField priceField;
+    @FXML
+    private TableView<Book> bookTable;
+    @FXML
+    private TableColumn<Customer, String> nameColumn;
+    @FXML
+    private TableColumn<Customer, Double> priceColumn;
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     @FXML
     private void enterButton(ActionEvent event) {
-
+        String name = nameField.getText();
+        double price = Double.parseDouble(priceField.getText());
+        Book b = new Book(name, price);
+        if (!Main.getBookList().contains(b)) {
+            Main.getBookList().add(b);
+        }
+        bookTable.getItems().setAll(Main.getBookList());
     }
 
     @FXML
     private void deleteButton(ActionEvent event) {
-
+        Book selectedBook = bookTable.getSelectionModel().getSelectedItem();
+        Main.getBookList().remove(selectedBook);
+        bookTable.getItems().setAll(Main.getBookList());
     }
 
     @FXML
@@ -39,5 +61,8 @@ public class OwnerBooksScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        bookTable.getItems().setAll(Main.getBookList());
     }
 }

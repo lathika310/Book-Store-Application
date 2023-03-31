@@ -54,21 +54,26 @@ public class Main extends Application {
         } catch (IOException e) {
             System.out.println("customer.txt saving error");
         }
+        try {
+            saveBooks();
+        } catch (IOException e) {
+            System.out.println("book.txt saving error");
+        }
     }
 
     public static ObservableList<Customer> fetchCustomers() throws FileNotFoundException {
 
-        ObservableList<Customer> customerList = FXCollections.observableArrayList();
+        ObservableList<Customer> tempList = FXCollections.observableArrayList();
         Scanner input = new Scanner(new File("customers.txt"));
 
         while (input.hasNextLine()) {
             try {
-                customerList.add(new Customer(input.nextLine(), input.nextLine(), Integer.parseInt(input.nextLine())));
+                tempList.add(new Customer(input.nextLine(), input.nextLine(), Integer.parseInt(input.nextLine())));
             } catch (NoSuchElementException e) {
                 System.out.println("customers.txt error");
             }
         }
-        return customerList;
+        return tempList;
     }
 
     public static void saveCustomers() throws IOException {
@@ -81,17 +86,17 @@ public class Main extends Application {
 
     public static ObservableList<Book> fetchBooks() throws FileNotFoundException {
 
-        ObservableList<Book> bookList = FXCollections.observableArrayList();
+        ObservableList<Book> tempList = FXCollections.observableArrayList();
         Scanner input = new Scanner(new File("books.txt"));
 
         while (input.hasNextLine()) {
             try {
-                bookList.add(new Book(input.nextLine(), Double.parseDouble(input.nextLine())));
+                tempList.add(new Book(input.nextLine(), Double.parseDouble(input.nextLine())));
             } catch (NoSuchElementException e) {
                 System.out.println("books.txt error");
             }
         }
-        return bookList;
+        return tempList;
     }
 
     public static void saveBooks() throws IOException {
@@ -102,11 +107,11 @@ public class Main extends Application {
         fw.close();
     }
 
-    public static ObservableList<Customer> getCustomers() {
+    public static ObservableList<Customer> getCustomerList() {
         return customerList;
     }
 
-    public static ObservableList<Book> getBooks() {
+    public static ObservableList<Book> getBookList() {
         return bookList;
     }
 

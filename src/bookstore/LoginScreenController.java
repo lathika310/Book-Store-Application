@@ -36,8 +36,8 @@ public class LoginScreenController implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        } else if (Main.getCustomers().contains(login)) {
-            Main.setCurrentAccount(Main.getCustomers().get(Main.getCustomers().indexOf(login)));
+        } else if (Main.getCustomerList().contains(login)) {
+            Main.setCurrentAccount(Main.getCustomerList().get(Main.getCustomerList().indexOf(login)));
 
             root = FXMLLoader.load(getClass().getResource("CustomerStartScreen.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

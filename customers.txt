@@ -4,9 +4,6 @@ person
 random
 human
 0
-lorem
-ipsum
-0
-new
-account
+bob
+jones
 0
