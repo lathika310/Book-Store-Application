@@ -18,8 +18,8 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    private static ObservableList<Customer> customers;
-    private static ObservableList<Book> books;
+    private static ObservableList<Customer> customerList;
+    private static ObservableList<Book> bookList;
     private static TableView<Customer> customerTable;
     private static TableView<Book> bookTable;
     private static Account currentAccount;
@@ -34,18 +34,18 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         try {
-            customers = fetchCustomers();
+            customerList = fetchCustomers();
         } catch (FileNotFoundException e) {
             System.out.println("customers.txt not found");
         }
         try {
-            books = fetchBooks();
+            bookList = fetchBooks();
         } catch (FileNotFoundException e) {
             System.out.println("books.txt not found");
         }
 
-        customerTable = new TableView<>(customers);
-        bookTable = new TableView<>(books);
+        customerTable = new TableView<>(customerList);
+        bookTable = new TableView<>(bookList);
 
         launch(args);
 
@@ -73,7 +73,7 @@ public class Main extends Application {
 
     public static void saveCustomers() throws IOException {
         FileWriter fw = new FileWriter("customers.txt");
-        for (Customer c : customers) {
+        for (Customer c : customerList) {
             fw.write(c.usernameProperty().get() + '\n' + c.passwordProperty().get() + '\n' + c.pointsProperty().get() + '\n');
         }
         fw.close();
@@ -94,12 +94,20 @@ public class Main extends Application {
         return bookList;
     }
 
+    public static void saveBooks() throws IOException {
+        FileWriter fw = new FileWriter("books.txt");
+        for (Book b : bookList) {
+            fw.write(b.nameProperty().get() + '\n' + b.priceProperty().get() + '\n');
+        }
+        fw.close();
+    }
+
     public static ObservableList<Customer> getCustomers() {
-        return customers;
+        return customerList;
     }
 
     public static ObservableList<Book> getBooks() {
-        return books;
+        return bookList;
     }
 
     public static TableView<Customer> getCustomerTable() {

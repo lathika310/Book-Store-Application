@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Book {//todo: all this stuff will have to be turned into Property objects like the Account class
+public class Book {
 
     private StringProperty name;
     private DoubleProperty price;
