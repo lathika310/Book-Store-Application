@@ -47,6 +47,15 @@ public class OwnerBooksScreenController implements Initializable {
         Book selectedBook = bookTable.getSelectionModel().getSelectedItem();
         Main.getBookList().remove(selectedBook);
     }
+    
+    @FXML
+    private void backButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("OwnerStartScreen.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     private void logoutButton(ActionEvent event) throws IOException {
