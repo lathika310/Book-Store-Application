@@ -9,6 +9,7 @@
         <Label layoutX="273.0" layoutY="42.0" text="Total Cost" textAlignment="CENTER" />
         <Label layoutX="217.0" layoutY="103.0" text="Points" textAlignment="CENTER" />
         <Label layoutX="352.0" layoutY="103.0" text="Status" textAlignment="CENTER" />
-        <Button layoutX="271.0" layoutY="240.0" mnemonicParsing="false" onAction="#logoutButton" text="Log Out" />
+        <Button layoutX="230.0" layoutY="240.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+        <Button layoutX="304.0" layoutY="240.0" mnemonicParsing="false" onAction="#logoutButton" text="Log Out" />
     </children>
 </AnchorPane>
