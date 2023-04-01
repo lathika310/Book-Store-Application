@@ -19,6 +19,15 @@ public class CustomerCostScreenController implements Initializable {
     private Parent root;
 
     @FXML
+    private void backButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("CustomerStartScreen.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    @FXML
     private void logoutButton(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
