@@ -1,11 +1,5 @@
 firsttitle
 10.0
-dictionary
-16.98
-textbook
-1200.4
-math textbook
-850.6
 book 1
 1.0
 book 2

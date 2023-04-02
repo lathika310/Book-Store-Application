@@ -47,7 +47,7 @@ public class CustomerStartScreenController implements Initializable {
 
     @FXML
     private void redeemButton(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("CustomerCostScreen.fxml"));
+        root = FXMLLoader.load(getClass().getResource("CustomerBuyAndRedeemScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
