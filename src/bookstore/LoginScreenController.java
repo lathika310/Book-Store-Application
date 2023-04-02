@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -50,5 +51,8 @@ public class LoginScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        for (int i = 0; i < Main.getBookList().size(); i++) {
+            Main.getBookList().get(i).setSelect(new CheckBox());
+        }
     }
 }

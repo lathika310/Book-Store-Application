@@ -10,8 +10,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class CustomerStartScreenController implements Initializable {
 
@@ -20,8 +24,18 @@ public class CustomerStartScreenController implements Initializable {
     private Parent root;
     
     @FXML
+    private TableView<Book> buyTable;
+    
+    @FXML
+    private TableColumn<Customer, String> nameColumn;
+    @FXML
+    private TableColumn<Customer, Double> priceColumn;
+    @FXML
+    private TableColumn<Customer, CheckBox> boxColumn;
+    
+    @FXML
     private Label WelcomeMessage;
-
+    
     @FXML
     private void buyButton(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("CustomerCostScreen.fxml"));
@@ -54,5 +68,11 @@ public class CustomerStartScreenController implements Initializable {
         WelcomeMessage.setText("Welcome " + Main.getCurrentAccount().usernameProperty().get() +
                 ". You have " + ((Customer)(Main.getCurrentAccount())).pointsProperty().get() +
                 " points. Your status is " + ((Customer)(Main.getCurrentAccount())).getStatus().getStatus());
+        
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        boxColumn.setCellValueFactory(new PropertyValueFactory<>("select"));
+        buyTable.setItems(Main.getBookList());
     }
+    
 }
