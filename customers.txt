@@ -12,4 +12,4 @@ job bones password
 0
 marcus
 marcus
-800
+470

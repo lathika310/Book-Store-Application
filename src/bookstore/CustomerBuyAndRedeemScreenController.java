@@ -44,6 +44,7 @@ public class CustomerBuyAndRedeemScreenController implements Initializable {
             if((Main.getBookList().get(i).getSelect()).isSelected()){
                 cost += Main.getBookList().get(i).priceProperty().get();
                 Main.getBookList().remove(i);
+                i--;
             }
         } 
       double initialCost = cost;
