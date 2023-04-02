@@ -28,9 +28,6 @@ public class Customer extends Account {
         }
         return points;
     }
-    
-    
-    
 
     public final void updateStatus() {
         if (pointsProperty().get() < 1000) {

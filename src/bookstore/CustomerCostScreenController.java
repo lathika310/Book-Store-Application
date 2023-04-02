@@ -48,6 +48,7 @@ public class CustomerCostScreenController implements Initializable {
        int currentPoints = ((Customer)(Main.getCurrentAccount())).pointsProperty().get();
        points += currentPoints;
        ((Customer)(Main.getCurrentAccount())).pointsProperty().set(points);
+       ((Customer)(Main.getCurrentAccount())).updateStatus();
        
         TotalCost.setText("Total Cost: $" + cost);
         PointsStatus.setText("Points: " + points  + ", Status: " +  ((Customer)(Main.getCurrentAccount())).getStatus().getStatus());

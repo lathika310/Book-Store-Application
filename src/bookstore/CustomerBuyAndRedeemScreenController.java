@@ -61,13 +61,14 @@ public class CustomerBuyAndRedeemScreenController implements Initializable {
        }
        else{
            cost -= pointsDiscount; 
-           currentPoints = remainderPoints;
+           currentPoints = 0;
        }
         
        points = ((int)cost) * 10; //calculates points gained from total cost
-       points += currentPoints;
+       points += currentPoints + remainderPoints;
        
        ((Customer)(Main.getCurrentAccount())).pointsProperty().set(points);
+       ((Customer)(Main.getCurrentAccount())).updateStatus();
        
 
         TotalCost.setText("Total Cost: $" + cost);

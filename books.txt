@@ -1,8 +1,2 @@
-firsttitle
-10.0
-book 1
-1.0
 book 2
 2.0
-book 3
-3.0

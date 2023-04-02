@@ -65,6 +65,7 @@ public class CustomerStartScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        ((Customer)(Main.getCurrentAccount())).updateStatus();
         WelcomeMessage.setText("Welcome " + Main.getCurrentAccount().usernameProperty().get() +
                 ". You have " + ((Customer)(Main.getCurrentAccount())).pointsProperty().get() +
                 " points. Your status is " + ((Customer)(Main.getCurrentAccount())).getStatus().getStatus());

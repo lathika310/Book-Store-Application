@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="BookStore.jar" size="24540" download="eager" />
+    <jar href="BookStore.jar" size="24599" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="BookStore" >
     <param name="requiredFXVersion" value="8.0+"/>
