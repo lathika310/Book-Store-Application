@@ -10,15 +10,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 
-public class CustomerCostScreenController implements Initializable {
+public class CustomerBuyAndRedeemScreenController implements Initializable {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private Label InitialTotalCost;
+    @FXML
+    private Label pointsAndDiscount;
     @FXML
     private Label TotalCost;
     @FXML
@@ -44,13 +47,31 @@ public class CustomerCostScreenController implements Initializable {
                 i--;
             }
         } 
-        
-       points = ((int)cost) * 10;
+      double initialCost = cost;
+       
        int currentPoints = ((Customer)(Main.getCurrentAccount())).pointsProperty().get();
-       points += currentPoints;
+       int pointsDiscount =  currentPoints / 100;  
+       int remainderPoints = currentPoints % 100;
+       
+       InitialTotalCost.setText("Initial Total Cost: $" + initialCost);
+       pointsAndDiscount.setText("Current Points: " + currentPoints + " gives Discount: $" + pointsDiscount);
+       
+       if(cost < pointsDiscount){
+           currentPoints = (pointsDiscount - (int)cost) * 100 ;
+           cost = 0;
+       }
+       else{
+           cost -= pointsDiscount; 
+           currentPoints = 0;
+       }
+        
+       points = ((int)cost) * 10; //calculates points gained from total cost
+       points += currentPoints + remainderPoints;
+       
        ((Customer)(Main.getCurrentAccount())).pointsProperty().set(points);
        ((Customer)(Main.getCurrentAccount())).updateStatus();
        
+
         TotalCost.setText("Total Cost: $" + cost);
         PointsStatus.setText("Points: " + points  + ", Status: " +  ((Customer)(Main.getCurrentAccount())).getStatus().getStatus());
        

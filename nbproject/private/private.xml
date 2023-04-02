@@ -3,12 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Daniel/Documents/GitHub/COE528-Project/src/bookstore/Book.java</file>
-            <file>file:/C:/Users/Daniel/Documents/GitHub/COE528-Project/src/bookstore/Customer.java</file>
-            <file>file:/C:/Users/Daniel/Documents/GitHub/COE528-Project/src/bookstore/Owner.java</file>
-            <file>file:/C:/Users/Daniel/Documents/GitHub/COE528-Project/src/bookstore/Main.java</file>
-            <file>file:/C:/Users/Daniel/Documents/GitHub/COE528-Project/src/bookstore/LoginScreenController.java</file>
-            <file>file:/C:/Users/Daniel/Documents/GitHub/COE528-Project/src/bookstore/Account.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/Customer.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/CustomerStartScreenController.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/LoginScreen.fxml</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/CustomerBuyAndRedeemScreenController.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/Main.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/OwnerBooksScreenController.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/CustomerCostScreen.fxml</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/CustomerCostScreenController.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/CustomerStartScreen.fxml</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/OwnerBooksScreen.fxml</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/OwnerStartScreenController.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/GoldStatus.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/LoginScreenController.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/Book.java</file>
+            <file>file:/C:/Users/marvi/OneDrive/Documents/GitHub/COE528-Project/src/bookstore/CustomerBuyAndRedeemScreen.fxml</file>
         </group>
     </open-files>
 </project-private>
