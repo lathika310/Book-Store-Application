@@ -11,12 +11,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 public class CustomerStartScreenController implements Initializable {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+    
+    @FXML
+    private Label WelcomeMessage;
 
     @FXML
     private void buyButton(ActionEvent event) throws IOException {
@@ -47,5 +51,8 @@ public class CustomerStartScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        WelcomeMessage.setText("Welcome " + Main.getCurrentAccount().usernameProperty().get() +
+                ". You have " + ((Customer)(Main.getCurrentAccount())).pointsProperty().get() +
+                " points. Your status is " + ((Customer)(Main.getCurrentAccount())).getStatus().getStatus());
     }
 }

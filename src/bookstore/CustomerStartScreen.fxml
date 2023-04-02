@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.CustomerStartScreenController">
     <children>
-        <Label layoutX="250.0" layoutY="42.0" text="Welcome Message" textAlignment="CENTER" />
+        <Label fx:id="WelcomeMessage" layoutX="125.0" layoutY="42.0" textAlignment="CENTER" />
         <Button layoutX="181.0" layoutY="290.0" mnemonicParsing="false" onAction="#buyButton" text="Buy" />
         <Button layoutX="270.0" layoutY="290.0" mnemonicParsing="false" onAction="#redeemButton" text="Redeem" />
         <Button layoutX="379.0" layoutY="290.0" mnemonicParsing="false" onAction="#logoutButton" text="Log Out" />
