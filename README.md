@@ -1,5 +1,5 @@
 # Stuff to do:
-Nothing hopefully
+Nothing
 
 # Finished:
 - Created customer and book lists
